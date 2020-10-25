@@ -1,10 +1,14 @@
 @extends('layouts.template')
-@section('title','Produtos')
+@section('title', 'Produtos')
 @section('content')
 <?php 
+@session_start();
+if(@$_SESSION['id_usuario'] == null){ 
+  echo "<script language='javascript'> window.location='./' </script>";
+}
 if(!isset($id)){
   $id = ""; 
-
+  
 }
 
 ?>
